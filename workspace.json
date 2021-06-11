@@ -1,0 +1,84 @@
+{
+  "version": 2,
+  "projects": {
+    "rescript": {
+      "root": "packages/rescript",
+      "sourceRoot": "packages/rescript/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "packages/rescript/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/packages/rescript"
+          ],
+          "options": {
+            "jestConfig": "packages/rescript/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/packages/rescript",
+            "tsConfig": "packages/rescript/tsconfig.lib.json",
+            "packageJson": "packages/rescript/package.json",
+            "main": "packages/rescript/src/index.ts",
+            "assets": [
+              "packages/rescript/*.md",
+              {
+                "input": "./packages/rescript/src",
+                "glob": "**/!(*.ts)",
+                "output": "./src"
+              },
+              {
+                "input": "./packages/rescript/src",
+                "glob": "**/*.d.ts",
+                "output": "./src"
+              },
+              {
+                "input": "./packages/rescript",
+                "glob": "generators.json",
+                "output": "."
+              },
+              {
+                "input": "./packages/rescript",
+                "glob": "executors.json",
+                "output": "."
+              }
+            ]
+          }
+        }
+      }
+    },
+    "rescript-e2e": {
+      "projectType": "application",
+      "root": "e2e/rescript-e2e",
+      "sourceRoot": "e2e/rescript-e2e/src",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/nx-plugin:e2e",
+          "options": {
+            "target": "rescript:build",
+            "npmPackageName": "@nx-plugins/rescript",
+            "pluginOutputPath": "dist/packages/rescript",
+            "jestConfig": "e2e/rescript-e2e/jest.config.js"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/workspace"
+  }
+}
