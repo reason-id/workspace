@@ -8,8 +8,8 @@ import {
 describe('rescript e2e', () => {
   it('should create rescript', async (done) => {
     const plugin = uniq('rescript');
-    ensureNxProject('@broerjuang/rescript', 'dist/packages/rescript');
-    await runNxCommandAsync(`generate @broerjuang/rescript:rescript ${plugin}`);
+    ensureNxProject('@reason-id/rescript', 'dist/packages/rescript');
+    await runNxCommandAsync(`generate @reason-id/rescript:rescript ${plugin}`);
 
     const result = await runNxCommandAsync(`build ${plugin}`);
     expect(result.stdout).toContain('Executor ran');
@@ -20,9 +20,9 @@ describe('rescript e2e', () => {
   describe('--directory', () => {
     it('should create src in the specified directory', async (done) => {
       const plugin = uniq('rescript');
-      ensureNxProject('@broerjuang/rescript', 'dist/packages/rescript');
+      ensureNxProject('@reason-id/rescript', 'dist/packages/rescript');
       await runNxCommandAsync(
-        `generate @broerjuang/rescript:rescript ${plugin} --directory subdir`
+        `generate @reason-id/rescript:rescript ${plugin} --directory subdir`
       );
       expect(() =>
         checkFilesExist(`libs/subdir/${plugin}/src/index.ts`)
@@ -34,9 +34,9 @@ describe('rescript e2e', () => {
   describe('--tags', () => {
     it('should add tags to nx.json', async (done) => {
       const plugin = uniq('rescript');
-      ensureNxProject('@broerjuang/rescript', 'dist/packages/rescript');
+      ensureNxProject('@reason-id/rescript', 'dist/packages/rescript');
       await runNxCommandAsync(
-        `generate @broerjuang/rescript:rescript ${plugin} --tags e2etag,e2ePackage`
+        `generate @reason-id/rescript:rescript ${plugin} --tags e2etag,e2ePackage`
       );
       const nxJson = readJson('nx.json');
       expect(nxJson.projects[plugin].tags).toEqual(['e2etag', 'e2ePackage']);

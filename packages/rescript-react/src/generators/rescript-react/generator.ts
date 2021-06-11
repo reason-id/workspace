@@ -66,7 +66,7 @@ export default async function (
     sourceRoot: `${normalizedOptions.projectRoot}/src`,
     targets: {
       build: {
-        executor: '@broerjuang/rescript-react:build',
+        executor: '@reason-id/rescript-react:build',
       },
     },
     tags: normalizedOptions.parsedTags,

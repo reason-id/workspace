@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@broerjuang/rescript": ["packages/rescript/src/index.ts"],
-      "@broerjuang/rescript-react": ["packages/rescript-react/src/index.ts"]
+      "@reason-id/rescript": ["packages/rescript/src/index.ts"],
+      "@reason-id/rescript-react": ["packages/rescript-react/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

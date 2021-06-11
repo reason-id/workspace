@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "hello": "node scripts",
     "nx": "nx",
     "start": "nx serve",
     "build": "nx build",
@@ -28,6 +29,10 @@
   "private": true,
   "dependencies": {
     "@nrwl/react": "^12.3.6",
+    "next": "^10.2.3",
+    "rescript-820": "npm:bs-platform@8.2.0",
+    "rescript-902": "npm:bs-platform@9.0.2",
+    "rescript-912": "npm:rescript@9.1.2",
     "tslib": "^2.0.0",
     "verdaccio": "^5.1.0"
   },

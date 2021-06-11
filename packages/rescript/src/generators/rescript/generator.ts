@@ -63,7 +63,7 @@ export default async function (host: Tree, options: RescriptGeneratorSchema) {
     sourceRoot: `${normalizedOptions.projectRoot}/src`,
     targets: {
       build: {
-        executor: '@broerjuang/rescript:build',
+        executor: '@reason-id/rescript:build',
       },
     },
     tags: normalizedOptions.parsedTags,

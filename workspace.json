@@ -70,7 +70,7 @@
           "executor": "@nrwl/nx-plugin:e2e",
           "options": {
             "target": "rescript:build",
-            "npmPackageName": "@broerjuang/rescript",
+            "npmPackageName": "@reason-id/rescript",
             "pluginOutputPath": "dist/packages/rescript",
             "jestConfig": "e2e/rescript-e2e/jest.config.js"
           }
@@ -146,7 +146,7 @@
           "executor": "@nrwl/nx-plugin:e2e",
           "options": {
             "target": "rescript-react:build",
-            "npmPackageName": "@broerjuang/rescript-react",
+            "npmPackageName": "@reason-id/rescript-react",
             "pluginOutputPath": "dist/packages/rescript-react",
             "jestConfig": "e2e/rescript-react-e2e/jest.config.js"
           }

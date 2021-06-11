@@ -5,7 +5,7 @@ import { createBsConfig } from './libs/create-bscofig-json';
 import { createOptions } from './libs/options';
 import { Schema } from './schema';
 import { runTasksInSerial } from '@nrwl/workspace/src/utilities/run-tasks-in-serial';
-import { rescriptInitGenerator } from '@broerjuang/rescript';
+import { rescriptInitGenerator } from '@reason-id/rescript';
 
 export async function generator(tree: Tree, schema: Schema) {
   // Normalization and validation --> atd | decco
