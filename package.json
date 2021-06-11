@@ -1,5 +1,5 @@
 {
-  "name": "nx-plugins",
+  "name": "broerjuang",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -27,6 +27,7 @@
   },
   "private": true,
   "dependencies": {
+    "@nrwl/react": "^12.3.6",
     "tslib": "^2.0.0",
     "verdaccio": "^5.1.0"
   },

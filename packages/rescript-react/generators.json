@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "rescript-react",
+  "version": "0.0.1",
+  "generators": {
+    "rescript-react": {
+      "factory": "./src/generators/rescript-react/generator",
+      "schema": "./src/generators/rescript-react/schema.json",
+      "description": "rescript-react generator"
+    }
+  }
+}

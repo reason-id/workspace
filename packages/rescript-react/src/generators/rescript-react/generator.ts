@@ -8,9 +8,9 @@ import {
   Tree,
 } from '@nrwl/devkit';
 import * as path from 'path';
-import { RescriptGeneratorSchema } from './schema';
+import { RescriptReactGeneratorSchema } from './schema';
 
-interface NormalizedSchema extends RescriptGeneratorSchema {
+interface NormalizedSchema extends RescriptReactGeneratorSchema {
   projectName: string;
   projectRoot: string;
   projectDirectory: string;
@@ -19,7 +19,7 @@ interface NormalizedSchema extends RescriptGeneratorSchema {
 
 function normalizeOptions(
   host: Tree,
-  options: RescriptGeneratorSchema
+  options: RescriptReactGeneratorSchema
 ): NormalizedSchema {
   const name = names(options.name).fileName;
   const projectDirectory = options.directory
@@ -55,7 +55,10 @@ function addFiles(host: Tree, options: NormalizedSchema) {
   );
 }
 
-export default async function (host: Tree, options: RescriptGeneratorSchema) {
+export default async function (
+  host: Tree,
+  options: RescriptReactGeneratorSchema
+) {
   const normalizedOptions = normalizeOptions(host, options);
   addProjectConfiguration(host, normalizedOptions.projectName, {
     root: normalizedOptions.projectRoot,
@@ -63,7 +66,7 @@ export default async function (host: Tree, options: RescriptGeneratorSchema) {
     sourceRoot: `${normalizedOptions.projectRoot}/src`,
     targets: {
       build: {
-        executor: '@broerjuang/rescript:build',
+        executor: '@broerjuang/rescript-react:build',
       },
     },
     tags: normalizedOptions.parsedTags,

@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "id": "RescriptReact",
+  "title": "",
+  "type": "object",
+  "properties": {
+    "unitTestRunner": {
+      "type": "string",
+      "description": "Enable tools for unit testing",
+      "enum": ["jest", "none"],
+      "default": "jest"
+    },
+    "e2eTestRunner": {
+      "type": "string",
+      "description": "Enable tools for e2e testing",
+      "enum": ["cypress", "none"],
+      "default": "cypress"
+    },
+    "skipFormat": {
+      "type": "boolean",
+      "description": "Skip formatting",
+      "default": true
+    }
+  },
+  "required": []
+}

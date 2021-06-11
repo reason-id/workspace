@@ -21,8 +21,8 @@ import { createBsConfig } from './libs/create-bs-config';
 function updateDependencies(tree: Tree, options: Options) {
   // make sure always using the latest version of this plugins
   updateJson(tree, 'package.json', (json) => {
-    if (json.dependencies['@nx-plugins/rescript']) {
-      delete json.dependencies['@nx-plugins/rescript'];
+    if (json.dependencies['@broerjuang/rescript']) {
+      delete json.dependencies['@broerjuang/rescript'];
       return json;
     }
     return json;
@@ -32,8 +32,8 @@ function updateDependencies(tree: Tree, options: Options) {
     tree,
     {},
     {
-      '@nx-plugins/rescript': NX_VERSION,
-      rescript: RESCRIPT_VERSION,
+      '@broerjuang/rescript': NX_VERSION,
+      'bs-platform': RESCRIPT_VERSION,
       genType: options.genType ? GENTYPE_VERSION : undefined,
     }
   );
@@ -43,7 +43,7 @@ export async function initGenerator(tree: Tree, schema: InitSchema) {
   let options = createOptions(schema);
   let tasks: Array<GeneratorCallback> = [];
 
-  setDefaultCollection(tree, '@nx-plugins/rescript');
+  setDefaultCollection(tree, '@broerjuang/rescript');
 
   if (options.unitTestRunner === 'jest') {
     let jestTask = await jestInitGenerator(tree, {});

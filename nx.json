@@ -1,5 +1,5 @@
 {
-  "npmScope": "nx-plugins",
+  "npmScope": "broerjuang",
   "affected": {
     "defaultBase": "master"
   },
@@ -25,6 +25,13 @@
     "rescript-e2e": {
       "tags": [],
       "implicitDependencies": ["rescript"]
+    },
+    "rescript-react": {
+      "tags": []
+    },
+    "rescript-react-e2e": {
+      "tags": [],
+      "implicitDependencies": ["rescript-react"]
     }
   },
   "workspaceLayout": {

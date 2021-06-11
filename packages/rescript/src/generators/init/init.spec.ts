@@ -18,7 +18,7 @@ describe('init', () => {
     await initGenerator(tree, {});
     let packageJson = readJson(tree, 'package.json');
     let bsconfig = readJson(tree, 'bsconfig.json');
-    expect(packageJson.devDependencies.rescript).toBeDefined();
+    expect(packageJson.devDependencies['bs-platform']).toBeDefined();
     expect(bsconfig.genType).toBeUndefined();
   });
 
@@ -26,7 +26,7 @@ describe('init', () => {
     await initGenerator(tree, { genType: true });
     let packageJson = readJson(tree, 'package.json');
     let bsconfig = readJson(tree, 'bsconfig.json');
-    expect(packageJson.devDependencies.rescript).toBeDefined();
+    expect(packageJson.devDependencies['bs-platform']).toBeDefined();
     expect(bsconfig.genType).toBeDefined();
   });
 });

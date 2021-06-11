@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "nx-plugins/rescript": ["packages/rescript/src/index.ts"]
+      "@broerjuang/rescript": ["packages/rescript/src/index.ts"],
+      "@broerjuang/rescript-react": ["packages/rescript-react/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
